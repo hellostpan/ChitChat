@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fa_star">&#xf005;</string>
+    <string name="fa_star_o">&#xf006;</string>
+    <string name="fa_heart">&#xf004;</string>
+    <string name="fa_heart_o">&#xf08a;</string>
+    <string name="fa_comments">&#xf086;</string>
+    <string name="fa_comments_o">&#xf0e6;</string>
+
+
+    <string name="fa_user">&#xf007;</string>
+</resources>
