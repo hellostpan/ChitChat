@@ -1,6 +1,7 @@
 package com.stpan.chitchat.mina;
 
 import com.google.gson.Gson;
+import com.stpan.chitchat.utils.Constants;
 
 import org.apache.mina.core.RuntimeIoException;
 import org.apache.mina.core.filterchain.IoFilter;
@@ -23,11 +24,11 @@ import java.util.Date;
  * Created by STPAN on 2016/4/4.
  */
 public class SocketClient {
+    private static final String TAG = "SocketClient";
     private static SocketClient client;
     private NioSocketConnector connector;
-    public static String TAG = "SocketClient";
-    public static String host = "192.168.1.105";
-    public static int port = 9898;
+    private String host = Constants.host;
+    private int port = Constants.port;
 
     public SocketClient() {
     }

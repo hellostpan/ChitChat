@@ -1,5 +1,6 @@
 package com.stpan.chitchat.activity;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -19,6 +20,7 @@ import com.stpan.chitchat.adapter.MainAdapter;
 import com.stpan.chitchat.fragment.DynamicFragment;
 import com.stpan.chitchat.fragment.FriendsFragment;
 import com.stpan.chitchat.fragment.MessageFragment;
+import com.stpan.chitchat.services.MessageService;
 import com.stpan.chitchat.utils.StatusBarCompat;
 
 import java.util.ArrayList;
@@ -82,6 +84,9 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        Intent intent = new Intent(MainActivity.this, MessageService.class);
+        startService(intent);
     }
 
     private void initViewPager(){

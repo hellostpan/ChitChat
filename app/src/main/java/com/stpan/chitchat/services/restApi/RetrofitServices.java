@@ -1,10 +1,7 @@
 package com.stpan.chitchat.services.restApi;
 
 
-import android.content.Context;
-
-import com.stpan.chitchat.R;
-import com.stpan.chitchat.utils.Constant;
+import com.stpan.chitchat.utils.Constants;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -34,7 +31,7 @@ public class RetrofitServices {
             synchronized (RetrofitServices.class) {
                 if (retrofit == null) {
                     retrofit = new Retrofit.Builder()
-                            .baseUrl(Constant.rest_path)
+                            .baseUrl(Constants.rest_path)
                             .addConverterFactory(GsonConverterFactory.create())
                             .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                             .client(new OkHttpClient.Builder()
