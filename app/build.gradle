@@ -51,4 +51,7 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'org.apache.mina:mina-core:2.0.13'
     compile 'org.greenrobot:eventbus:3.0.0'
+    compile('com.github.afollestad.material-dialogs:core:0.8.5.8@aar') {
+        transitive = true
+    }
 }

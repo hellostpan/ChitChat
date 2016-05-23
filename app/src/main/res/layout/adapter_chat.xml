@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingTop="8dp">
+
+    <TextView
+        android:id="@+id/tv_ada_message_chat_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/shape_bg_gray"
+        android:paddingBottom="4dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="4dp"
+        android:text="15.23" />
+
+    <RelativeLayout
+        android:id="@+id/rl_ada_chat_other"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_ada_chat_other_head_img"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@mipmap/headimg_gril" />
+
+        <TextView
+            android:id="@+id/tv_ada_message_who"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/tv_ada_message_time"
+            android:layout_toRightOf="@id/iv_ada_chat_other_head_img"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:paddingBottom="4dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="4dp"
+            android:text="阿拉山口"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_ada_message_other_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_ada_message_who"
+            android:layout_toLeftOf="@+id/tv_ada_message_time"
+            android:layout_toRightOf="@id/iv_ada_chat_other_head_img"
+            android:background="@drawable/icon_pop_other"
+            android:gravity="center_vertical"
+            android:paddingBottom="4dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="4dp"
+            android:text="你在达斯阿萨德你在达斯阿萨德撒做啥你在达斯阿萨德撒做啥你在达斯阿萨德撒做啥撒做啥"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_ada_chat_me"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_ada_chat_me_head_img"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/headimg_gril" />
+
+        <TextView
+            android:id="@+id/tv_ada_message_me_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/iv_ada_chat_me_head_img"
+            android:background="@drawable/icon_pop_me"
+            android:gravity="center_vertical"
+            android:minHeight="48dp"
+            android:paddingBottom="4dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="4dp"
+            android:text="你在达斯阿萨德撒你在达斯阿萨德撒做啥你在达斯阿萨德撒做啥你在达斯阿萨德撒做啥你在达斯阿萨德撒做啥做啥"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+</LinearLayout>

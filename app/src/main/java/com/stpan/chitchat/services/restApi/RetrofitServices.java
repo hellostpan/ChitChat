@@ -44,7 +44,7 @@ public class RetrofitServices {
         return retrofit;
     }
 
-    public RestService getRestService() {
-        return getRetrofit().create(RestService.class);
+    public RestUserService getRestUserService() {
+        return getRetrofit().create(RestUserService.class);
     }
 }

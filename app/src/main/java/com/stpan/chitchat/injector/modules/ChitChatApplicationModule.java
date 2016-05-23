@@ -1,17 +1,9 @@
 package com.stpan.chitchat.injector.modules;
 
-import android.app.Application;
-import android.content.Context;
-import android.location.LocationManager;
-
 import com.google.gson.Gson;
 import com.stpan.chitchat.MyApplication;
-import com.stpan.chitchat.injector.PerApp;
-import com.stpan.chitchat.services.restApi.RestService;
+import com.stpan.chitchat.services.restApi.RestUserService;
 import com.stpan.chitchat.services.restApi.RetrofitServices;
-import com.stpan.chitchat.utils.GsonUtil;
-
-import static android.content.Context.LOCATION_SERVICE;
 
 import javax.inject.Singleton;
 
@@ -39,8 +31,8 @@ public class ChitChatApplicationModule{
 
     @Provides
     @Singleton
-    RestService provideRestService(){
-        return RetrofitServices.getInstance().getRestService();
+    RestUserService provideRestService(){
+        return RetrofitServices.getInstance().getRestUserService();
     }
 
     @Provides @Singleton
