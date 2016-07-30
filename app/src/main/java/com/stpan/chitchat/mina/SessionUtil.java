@@ -2,7 +2,6 @@ package com.stpan.chitchat.mina;
 
 
 import com.google.gson.Gson;
-import com.stpan.chitchat.MyApplication;
 
 import org.apache.mina.core.session.IoSession;
 
@@ -48,7 +47,7 @@ public class SessionUtil {
             SocketClient.getSocketClient().connectServer();
         }else {
             result = new Result();
-            result.setFrom(MyApplication.getInstance().getUserId());
+            //result.setFrom(MyApplication.getInstance().getUserId());
             result.setTo(to);
             result.setCode("2");
             result.setMessage(message.toString());

@@ -2,25 +2,23 @@ package com.stpan.chitchat.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AbsListView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.stpan.chitchat.R;
+
 
 /**
  * Created by stpan on 2016/3/15.
  */
 public class LoadMoreListView extends ListView implements AbsListView.OnScrollListener {
-    private LinearLayout footer;
     private int totalItemCount;
     private int lastItemCount;
     private boolean isLoading = false;
     private boolean isEnd = false;
     private IOnLoadMoreLister iOnLoadMoreLister;
-
+    private View mFooterView;
     public LoadMoreListView(Context context) {
         super(context);
         initView(context);
@@ -42,11 +40,9 @@ public class LoadMoreListView extends ListView implements AbsListView.OnScrollLi
      * @param context
      */
     private void initView(Context context) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.footer_layout, null);
-        footer = (LinearLayout) view.findViewById(R.id.load_layout);
-        footer.setVisibility(GONE);
-        this.addFooterView(view);
+        mFooterView = View.inflate(context, R.layout.footer_layout, null);
+        mFooterView.setVisibility(GONE);
+        this.addFooterView(mFooterView);
         this.setOnScrollListener(this);
     }
 
@@ -55,7 +51,7 @@ public class LoadMoreListView extends ListView implements AbsListView.OnScrollLi
         if (totalItemCount==lastItemCount&&scrollState==SCROLL_STATE_IDLE){
             if (!isLoading&&!isEnd){
                 isLoading = true;
-                footer.setVisibility(VISIBLE);
+                mFooterView.setVisibility(VISIBLE);
                 iOnLoadMoreLister.loadingMore();
             }
         }
@@ -73,7 +69,7 @@ public class LoadMoreListView extends ListView implements AbsListView.OnScrollLi
 
     public void loadingComplete(){
         isLoading = false;
-        footer.setVisibility(GONE);
+        mFooterView.setVisibility(GONE);
     }
 
     public void setIsEnd(boolean isEnd){

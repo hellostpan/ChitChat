@@ -5,7 +5,6 @@ import com.google.gson.Gson;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
-import org.greenrobot.eventbus.EventBus;
 
 /**
  * Created by STPAN on 2016/4/3.
@@ -48,7 +47,6 @@ public class MyHandler extends IoHandlerAdapter {
     public void messageReceived(IoSession session, Object message) throws Exception {
         String s = (String) message;
         System.out.println("messageReceived: "+s);
-        EventBus.getDefault().post(s);
     }
 
     @Override

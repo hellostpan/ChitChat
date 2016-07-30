@@ -13,8 +13,8 @@
         android:theme="@style/AppTheme">
         <service android:name=".services.MessageService" />
 
-        <activity android:name=".ui.activity.MainActivity"/>
-        <activity android:name=".ui.activity.LoginActivity">
+        <activity android:name=".ui.main.MainActivity"/>
+        <activity android:name=".ui.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

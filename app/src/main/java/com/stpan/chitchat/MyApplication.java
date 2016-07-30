@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import com.stpan.chitchat.injector.components.ChitChatApplicationComponent;
 import com.stpan.chitchat.injector.components.DaggerChitChatApplicationComponent;
 import com.stpan.chitchat.injector.modules.ChitChatApplicationModule;
+import com.stpan.chitchat.utils.ComponentHolder;
 
 
 /**
@@ -15,8 +16,6 @@ import com.stpan.chitchat.injector.modules.ChitChatApplicationModule;
  * 作者:pst
  */
 public class MyApplication extends Application {
-    private static MyApplication myApplication;
-    private ChitChatApplicationComponent chitChatApplicationComponent;
     private SharedPreferences sharedPreferences;
     private Typeface typeface;
 
@@ -24,25 +23,17 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        myApplication = this;
         initData();
-    }
-
-    public static MyApplication getInstance(){
-        return myApplication;
     }
 
 
     private void initData(){
-        chitChatApplicationComponent = DaggerChitChatApplicationComponent.builder()
+        ChitChatApplicationComponent chitChatApplicationComponent = DaggerChitChatApplicationComponent.builder()
                 .chitChatApplicationModule(new ChitChatApplicationModule(this))
                 .build();
         typeface = Typeface.createFromAsset(getAssets(),"fontawesome-webfont.ttf");
         sharedPreferences = getSharedPreferences("ChitChat",MODE_PRIVATE);
-    }
-
-    public ChitChatApplicationComponent getChitChatApplicationComponent() {
-        return chitChatApplicationComponent;
+        ComponentHolder.setApplicationComponent(chitChatApplicationComponent);
     }
 
     public void setUserId(String userId){

@@ -14,7 +14,6 @@ import org.apache.mina.core.write.WriteRequest;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.transport.socket.SocketSessionConfig;
 import org.apache.mina.transport.socket.nio.NioSocketConnector;
-import org.greenrobot.eventbus.EventBus;
 
 import java.net.InetSocketAddress;
 import java.text.SimpleDateFormat;
@@ -108,7 +107,6 @@ public class SocketClient {
         public void messageReceived(IoSession session, Object message) throws Exception {
             String s = (String) message;
             System.out.println("messageReceived: " + s);
-            EventBus.getDefault().post(s);
         }
 
         @Override

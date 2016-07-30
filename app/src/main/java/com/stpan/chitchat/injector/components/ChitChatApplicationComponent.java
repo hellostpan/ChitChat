@@ -1,12 +1,8 @@
 package com.stpan.chitchat.injector.components;
 
-import android.app.Application;
-import android.location.LocationManager;
-
 import com.stpan.chitchat.MyApplication;
-import com.stpan.chitchat.injector.PerApp;
 import com.stpan.chitchat.injector.modules.ChitChatApplicationModule;
-import com.stpan.chitchat.services.restApi.RestUserService;
+import com.stpan.chitchat.services.UserService;
 
 import javax.inject.Singleton;
 
@@ -21,6 +17,6 @@ import dagger.Component;
 @Component(modules = ChitChatApplicationModule.class)
 public interface ChitChatApplicationComponent {
     MyApplication getMyApplication();
-    RestUserService getRestUserService();
+    UserService getRestUserService();
 
 }

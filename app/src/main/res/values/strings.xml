@@ -3,6 +3,8 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dialog_title">请稍候</string>
+    <string name="dialog_message1">数据获取中</string>
+    <string name="dialog_message2">数据处理中</string>
+    <string name="toast_content">获取数据失败</string>
 </resources>
